@@ -17,6 +17,7 @@ public class GameSettingsDrawer
 	{
 		settings.put("xsize", 20);
 		settings.put("ysize", 20);
+		settings.put("goldpercent", 20);
 
 		final JFrame frame = new JFrame();
 		frame.setTitle("Yazlab 1 - 1 | Oyun Ayarları");
@@ -54,6 +55,23 @@ public class GameSettingsDrawer
 			}
 		});
 
+		final JLabel goldPercentLabel = new JLabel(String.format("Karelerin yüzde kaçında altın olacak: %%%d (%d tane)", settings.get("goldpercent"), settings.get("xsize") * settings.get("ysize") * settings.get("goldpercent") / 100));
+		goldPercentLabel.setBorder(new EmptyBorder(10, 0, 0, 0));
+		final JSlider goldPercent = new JSlider(0, 100, 20);
+		goldPercent.setPaintLabels(true);
+		goldPercent.setPaintTicks(true);
+		goldPercent.setPaintTrack(true);
+		goldPercent.setMajorTickSpacing(10);
+		goldPercent.setMinorTickSpacing(1);
+		goldPercent.addChangeListener(new ChangeListener()
+		{
+			public void stateChanged(ChangeEvent e)
+			{
+				settings.put("goldpercent", goldPercent.getValue());
+				goldPercentLabel.setText(String.format("Karelerin yüzde kaçında altın olacak: %%%d (%d tane)", settings.get("goldpercent"), settings.get("xsize") * settings.get("ysize") * settings.get("goldpercent") / 100));
+			}
+		});
+
 		JButton startButton = new JButton("Başla");
 		startButton.addActionListener(new ActionListener()
 		{
@@ -68,6 +86,8 @@ public class GameSettingsDrawer
 		sizeContainer.add(xSize);
 		sizeContainer.add(ySizeLabel);
 		sizeContainer.add(ySize);
+		sizeContainer.add(goldPercentLabel);
+		sizeContainer.add(goldPercent);
 		sizeContainer.add(startButton);
 
 		frame.add(sizeContainer);

@@ -1,12 +1,14 @@
+import java.awt.*;
+
 public class PlayerA extends Player
 {
 
-	public PlayerA()
+	public PlayerA(Point position)
 	{
-		super("A");
+		super("A", Color.red, position);
 	}
 
-	void move()
+	void chooseMove()
 	{
 
 	}
