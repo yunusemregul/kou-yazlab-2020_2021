@@ -1,3 +1,5 @@
+package yazlab11;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ChangeEvent;
@@ -18,6 +20,7 @@ public class GameSettingsDrawer
 		settings.put("xsize", 20);
 		settings.put("ysize", 20);
 		settings.put("goldpercent", 20);
+		settings.put("hiddengoldpercent", 10);
 
 		final JFrame frame = new JFrame();
 		frame.setTitle("Yazlab 1 - 1 | Oyun Ayarları");
@@ -57,6 +60,10 @@ public class GameSettingsDrawer
 
 		final JLabel goldPercentLabel = new JLabel(String.format("Karelerin yüzde kaçında altın olacak: %%%d (%d tane)", settings.get("goldpercent"), settings.get("xsize") * settings.get("ysize") * settings.get("goldpercent") / 100));
 		goldPercentLabel.setBorder(new EmptyBorder(10, 0, 0, 0));
+
+		final JLabel hiddenGoldPercentLabel = new JLabel(String.format("Altınların yüzde kaçı gizli olacak: %%%d (%d tane)", settings.get("hiddengoldpercent"), (settings.get("xsize") * settings.get("ysize") * settings.get("goldpercent") / 100) * settings.get("hiddengoldpercent") / 100));
+		hiddenGoldPercentLabel.setBorder(new EmptyBorder(10, 0, 0, 0));
+
 		final JSlider goldPercent = new JSlider(0, 100, 20);
 		goldPercent.setPaintLabels(true);
 		goldPercent.setPaintTicks(true);
@@ -69,6 +76,22 @@ public class GameSettingsDrawer
 			{
 				settings.put("goldpercent", goldPercent.getValue());
 				goldPercentLabel.setText(String.format("Karelerin yüzde kaçında altın olacak: %%%d (%d tane)", settings.get("goldpercent"), settings.get("xsize") * settings.get("ysize") * settings.get("goldpercent") / 100));
+				hiddenGoldPercentLabel.setText(String.format("Altınların yüzde kaçı gizli olacak: %%%d (%d tane)", settings.get("hiddengoldpercent"), (settings.get("xsize") * settings.get("ysize") * settings.get("goldpercent") / 100) * settings.get("hiddengoldpercent") / 100));
+			}
+		});
+
+		final JSlider hiddenGoldPercent = new JSlider(0, 100, 20);
+		hiddenGoldPercent.setPaintLabels(true);
+		hiddenGoldPercent.setPaintTicks(true);
+		hiddenGoldPercent.setPaintTrack(true);
+		hiddenGoldPercent.setMajorTickSpacing(10);
+		hiddenGoldPercent.setMinorTickSpacing(1);
+		hiddenGoldPercent.addChangeListener(new ChangeListener()
+		{
+			public void stateChanged(ChangeEvent e)
+			{
+				settings.put("hiddengoldpercent", hiddenGoldPercent.getValue());
+				hiddenGoldPercentLabel.setText(String.format("Altınların yüzde kaçı gizli olacak: %%%d (%d tane)", settings.get("hiddengoldpercent"), (settings.get("xsize") * settings.get("ysize") * settings.get("goldpercent") / 100) * settings.get("hiddengoldpercent") / 100));
 			}
 		});
 
@@ -88,6 +111,8 @@ public class GameSettingsDrawer
 		sizeContainer.add(ySize);
 		sizeContainer.add(goldPercentLabel);
 		sizeContainer.add(goldPercent);
+		sizeContainer.add(hiddenGoldPercentLabel);
+		sizeContainer.add(hiddenGoldPercent);
 		sizeContainer.add(startButton);
 
 		frame.add(sizeContainer);
