@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 
 public class GameDrawer
 {
@@ -23,10 +24,10 @@ public class GameDrawer
 		this.settings = settings;
 
 		players = new Player[]{
-				new PlayerA(new Point(0, 0)),
-				new PlayerB(new Point(settings.get("xsize") - 1, 0)),
-				new PlayerC(new Point(0, settings.get("ysize") - 1)),
-				new PlayerD(new Point(settings.get("xsize") - 1, settings.get("ysize") - 1))
+				new PlayerA(new Point(0, 0), settings.get("playerA_choosecost"), settings.get("playerA_movecost")),
+				new PlayerB(new Point(settings.get("xsize") - 1, 0), settings.get("playerB_choosecost"), settings.get("playerB_movecost")),
+				new PlayerC(new Point(0, settings.get("ysize") - 1), settings.get("playerC_choosecost"), settings.get("playerC_movecost")),
+				new PlayerD(new Point(settings.get("xsize") - 1, settings.get("ysize") - 1), settings.get("playerD_choosecost"), settings.get("playerD_movecost"))
 		};
 
 		golds = new ArrayList<Gold>();
@@ -37,15 +38,17 @@ public class GameDrawer
 		int goldCount = Math.round((settings.get("xsize") * settings.get("ysize")) * settings.get("goldpercent") / 100);
 		goldCount = settings.get("goldpercent") == 100 ? goldCount - 4 : goldCount;
 
+		Random random = new Random();
 		for (int i = 0; i < goldCount; i++)
 		{
+			int goldAmount = 5 * (random.nextInt(4) + 1);
 			if (i < goldCount * settings.get("hiddengoldpercent") / 100)
 			{
-				golds.add(new Gold(goldPositionGenerator.get(), true));
+				golds.add(new Gold(goldPositionGenerator.get(), true, goldAmount));
 			}
 			else
 			{
-				golds.add(new Gold(goldPositionGenerator.get(), false));
+				golds.add(new Gold(goldPositionGenerator.get(), false, goldAmount));
 			}
 		}
 
@@ -110,24 +113,14 @@ public class GameDrawer
 
 		for (Player player : players)
 		{
-			double minDistance = Double.MAX_VALUE;
-			Gold closestGold = null;
-			for (Gold gold : golds)
-			{
-				double distance = PathFinder.calculateBirdViewDistance(player.grid, gold.grid);
+			Gold target = player.chooseMove(golds);
 
-				if (distance < minDistance)
-				{
-					minDistance = distance;
-					closestGold = gold;
-				}
-			}
+			Point plyScreenPos = getGridScreenPos(player.grid);
+			Point goldScreenPos = getGridScreenPos(target.grid);
 
 			g.setStroke(new BasicStroke(3));
 			g.setColor(Color.white);
-			Point plyScreenPos = getGridScreenPos(player.grid);
-			Point goldScreenPos = getGridScreenPos(closestGold.grid);
-			g.drawLine((int)plyScreenPos.x + gridSize/2, (int)plyScreenPos.y+ gridSize/2, (int)goldScreenPos.x+ gridSize/2, (int)goldScreenPos.y+ gridSize/2);
+			g.drawLine((int) plyScreenPos.x + gridSize / 2, (int) plyScreenPos.y + gridSize / 2, (int) goldScreenPos.x + gridSize / 2, (int) goldScreenPos.y + gridSize / 2);
 			g.setStroke(new BasicStroke(1));
 		}
 	}

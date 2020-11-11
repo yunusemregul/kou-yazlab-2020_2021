@@ -6,19 +6,31 @@ import yazlab11.Point;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
+import java.util.ArrayList;
 
 public abstract class Player
 {
 	public final String name;
 	public final Color color;
-	public yazlab11.Point grid;
+	public Point grid;
 	public Gold target;
+	public int goldAmount;
+	private int chooseCost;
+	private int moveCost;
 
-	protected Player(String name, Color color, yazlab11.Point grid)
+	protected Player(String name, Color color, Point grid, int chooseCost, int moveCost)
 	{
 		this.name = name;
 		this.color = color;
 		this.grid = grid;
+		this.goldAmount = 0;
+		this.chooseCost = chooseCost;
+		this.moveCost = moveCost;
+	}
+
+	public void addGold(int amount)
+	{
+		goldAmount += amount;
 	}
 
 	public void draw(Graphics2D g)
@@ -31,5 +43,5 @@ public abstract class Player
 		g.drawString(name, screenPos.x+ GameDrawer.gridSize/2-4, screenPos.y+ GameDrawer.gridSize/2+5);
 	}
 
-	abstract void chooseMove();
+	public abstract Gold chooseMove(ArrayList<Gold> golds);
 }
