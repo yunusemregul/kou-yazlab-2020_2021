@@ -24,6 +24,7 @@ public class RandomGoldPositionGenerator
 		{
 			for (int y = 0; y < ySize; y++)
 			{
+				// to not generate positions at board corners, where players start the game, we exclude them
 				if(x==0 && y==0)
 					continue;
 				if(x==(xSize-1) && y==0)
@@ -32,6 +33,7 @@ public class RandomGoldPositionGenerator
 					continue;
 				if(x==(xSize-1) && y==(ySize-1))
 					continue;
+
 				positions.add(new Point(x, y));
 			}
 		}

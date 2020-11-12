@@ -21,6 +21,7 @@ public class GameSettingsDrawer
 		settings.put("ysize", 20);
 		settings.put("goldpercent", 20);
 		settings.put("hiddengoldpercent", 10);
+		settings.put("startinggold", 200);
 
 		settings.put("playerA_choosecost", 5);
 		settings.put("playerA_movecost", 5);
@@ -114,6 +115,19 @@ public class GameSettingsDrawer
 			}
 		});
 
+		final JLabel startingGoldLabel = new JLabel("Oyuncuların başlangıç parası:");
+		startingGoldLabel.setBorder(new EmptyBorder(10, 0, 0, 0));
+
+		final JSpinner startingGold = new JSpinner();
+		startingGold.setValue(settings.get("startinggold"));
+		startingGold.addChangeListener(new ChangeListener()
+		{
+			public void stateChanged(ChangeEvent e)
+			{
+				settings.put("startinggold", (Integer) ySize.getValue());
+			}
+		});
+
 
 		JButton startButton = new JButton("Başla");
 		startButton.addActionListener(new ActionListener()
@@ -133,6 +147,8 @@ public class GameSettingsDrawer
 		sizeContainer.add(goldPercent);
 		sizeContainer.add(hiddenGoldPercentLabel);
 		sizeContainer.add(hiddenGoldPercent);
+		sizeContainer.add(startingGoldLabel);
+		sizeContainer.add(startingGold);
 
 		JPanel playerASettings = generatePlayerSettingsPanel("A");
 		JPanel playerBSettings = generatePlayerSettingsPanel("B");

@@ -1,17 +1,19 @@
 package yazlab11.game.players;
 
+import yazlab11.Logger;
 import yazlab11.PathFinder;
 import yazlab11.Point;
 import yazlab11.game.Gold;
+import yazlab11.game.Grid;
 
 import java.awt.*;
 import java.util.ArrayList;
 
 public class PlayerB extends Player
 {
-	public PlayerB(Point position, int chooseCost, int moveCost)
+	public PlayerB(Grid grid, int goldAmount, int chooseCost, int moveCost)
 	{
-		super("B", new Color(50, 0, 50), position, chooseCost, moveCost);
+		super("B", new Color(50, 0, 50), grid, goldAmount, chooseCost, moveCost);
 	}
 
 	public Gold chooseTarget(ArrayList<Gold> golds)
@@ -35,6 +37,8 @@ public class PlayerB extends Player
 
 		target = mostProfitableGold;
 
+		Logger.log(name, String.format("Yeni hedef olarak %.0f, %.0f karesindeki altını belirledi.", target.grid.position.x, target.grid.position.y));
+		addGold(-this.chooseCost);
 		return target;
 	}
 }
