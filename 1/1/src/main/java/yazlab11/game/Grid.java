@@ -25,11 +25,11 @@ public class Grid
 		ArrayList<Grid> connected = new ArrayList<>();
 
 		// left
-		if (position.x - 1 > 0)
+		if (position.x - 1 >= 0)
 			connected.add(new Grid(position.x - 1, position.y));
 
 		// top
-		if (position.y - 1 > 0)
+		if (position.y - 1 >= 0)
 			connected.add(new Grid(position.x, position.y - 1));
 
 		// right
@@ -59,8 +59,6 @@ public class Grid
 		if (o == null || getClass() != o.getClass())
 			return false;
 		Grid grid = (Grid) o;
-		if (grid.position == position)
-			return true;
 		return ((grid.position.x == position.x) && (grid.position.y==position.y));
 	}
 

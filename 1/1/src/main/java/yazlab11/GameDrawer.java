@@ -95,7 +95,7 @@ public class GameDrawer
 
 				if (player.target != null)
 				{
-					for (int i = 0; i < 3 && player.target != null; i++)
+					for (int i = 0; i < Math.min(player.pathToTarget.grids.size(), 3); i++)
 					{
 						player.move(player.pathToTarget.grids.remove(0));
 						if (golds.contains(new Gold(player.grid)))
@@ -106,10 +106,23 @@ public class GameDrawer
 							else
 							{
 								player.addGold(gold.amount);
+								for (Player other: players)
+								{
+									if (player==other)
+										continue;
+
+									if (other.target==gold)
+									{
+										other.target = null;
+										other.pathToTarget = null;
+									}
+								}
 								if(gold==player.target)
 								{
 									player.target = null;
 									player.pathToTarget = null;
+									golds.remove(gold);
+									break;
 								}
 								golds.remove(gold);
 							}
@@ -134,7 +147,10 @@ public class GameDrawer
 				panel.revalidate();
 				panel.repaint();
 
-				if (players.size() == 0)
+				if (players.size() == 1)
+					((Timer) e.getSource()).stop();
+
+				if (golds.size() == 0)
 					((Timer) e.getSource()).stop();
 
 				playerIndex[0] = (playerIndex[0] + 1) % players.size();
