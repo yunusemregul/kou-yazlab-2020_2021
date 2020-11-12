@@ -1,8 +1,8 @@
-package yazlab11.players;
+package yazlab11.game.players;
 
-import yazlab11.Gold;
 import yazlab11.PathFinder;
 import yazlab11.Point;
+import yazlab11.game.Gold;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -14,22 +14,26 @@ public class PlayerB extends Player
 		super("B", new Color(50, 0, 50), position, chooseCost, moveCost);
 	}
 
-	public Gold chooseMove(ArrayList<Gold> golds)
+	public Gold chooseTarget(ArrayList<Gold> golds)
 	{
-		double minDistance = Double.MAX_VALUE;
-		Gold closestGold = null;
+		double minCost = Double.MAX_VALUE;
+		Gold mostProfitableGold = null;
 		for (Gold gold : golds)
 		{
-			double distance = PathFinder.calculateBirdViewDistance(this.grid, gold.grid);
+			if(gold.hidden)
+				continue;
 
-			if (distance < minDistance)
+			double distance = PathFinder.calculateBirdViewDistance(this.grid, gold.grid);
+			double cost = distance/gold.amount;
+
+			if (cost < minCost)
 			{
-				minDistance = distance;
-				closestGold = gold;
+				minCost = cost;
+				mostProfitableGold = gold;
 			}
 		}
 
-		target = closestGold;
+		target = mostProfitableGold;
 
 		return target;
 	}

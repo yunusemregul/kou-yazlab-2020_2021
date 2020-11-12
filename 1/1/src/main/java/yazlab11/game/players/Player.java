@@ -1,8 +1,8 @@
-package yazlab11.players;
+package yazlab11.game.players;
 
 import yazlab11.GameDrawer;
-import yazlab11.Gold;
 import yazlab11.Point;
+import yazlab11.game.Gold;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
@@ -43,5 +43,5 @@ public abstract class Player
 		g.drawString(name, screenPos.x+ GameDrawer.gridSize/2-4, screenPos.y+ GameDrawer.gridSize/2+5);
 	}
 
-	public abstract Gold chooseMove(ArrayList<Gold> golds);
+	public abstract Gold chooseTarget(ArrayList<Gold> golds);
 }

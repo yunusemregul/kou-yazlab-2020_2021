@@ -1,8 +1,8 @@
-package yazlab11.players;
+package yazlab11.game.players;
 
-import yazlab11.Gold;
 import yazlab11.PathFinder;
 import yazlab11.Point;
+import yazlab11.game.Gold;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ public class PlayerD extends Player
 		super("D", new Color(154,203,154), position, chooseCost, moveCost);
 	}
 
-	public Gold chooseMove(ArrayList<Gold> golds)
+	public Gold chooseTarget(ArrayList<Gold> golds)
 	{
 		double minDistance = Double.MAX_VALUE;
 		Gold closestGold = null;

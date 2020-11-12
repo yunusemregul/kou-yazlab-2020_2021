@@ -1,4 +1,7 @@
-package yazlab11;
+package yazlab11.game;
+
+import yazlab11.GameDrawer;
+import yazlab11.Point;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
@@ -6,12 +9,12 @@ import java.awt.geom.Ellipse2D;
 public class Gold
 {
 	public int amount;
-	public Point grid;
+	public yazlab11.Point grid;
 	public boolean hidden;
 	private static final Color color = new Color(255,223,0);
 	private static final Color hiddenColor = new Color(99, 99, 99);
 
-	public Gold(Point grid, boolean hidden, int amount)
+	public Gold(yazlab11.Point grid, boolean hidden, int amount)
 	{
 		this.grid = grid;
 		this.hidden = hidden;

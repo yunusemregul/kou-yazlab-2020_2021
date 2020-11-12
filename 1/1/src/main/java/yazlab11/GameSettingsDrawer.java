@@ -83,7 +83,7 @@ public class GameSettingsDrawer
 			}
 		});
 
-		final JSlider goldPercent = new JSlider(0, 100, 20);
+		final JSlider goldPercent = new JSlider(0, 100, settings.get("goldpercent"));
 		goldPercent.setPaintLabels(true);
 		goldPercent.setPaintTicks(true);
 		goldPercent.setPaintTrack(true);
@@ -99,7 +99,7 @@ public class GameSettingsDrawer
 			}
 		});
 
-		final JSlider hiddenGoldPercent = new JSlider(0, 100, 20);
+		final JSlider hiddenGoldPercent = new JSlider(0, 100, settings.get("hiddengoldpercent"));
 		hiddenGoldPercent.setPaintLabels(true);
 		hiddenGoldPercent.setPaintTicks(true);
 		hiddenGoldPercent.setPaintTrack(true);
@@ -121,7 +121,7 @@ public class GameSettingsDrawer
 			public void actionPerformed(ActionEvent e)
 			{
 				frame.setVisible(false);
-				GameDrawer gameDrawer = new GameDrawer(settings);
+				new GameDrawer(settings);
 			}
 		});
 

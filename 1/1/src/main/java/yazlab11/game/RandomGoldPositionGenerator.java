@@ -1,4 +1,6 @@
-package yazlab11;
+package yazlab11.game;
+
+import yazlab11.Point;
 
 import java.util.ArrayList;
 import java.util.Collections;
