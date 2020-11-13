@@ -95,7 +95,8 @@ public class GameDrawer
 
 				if (player.target != null)
 				{
-					for (int i = 0; i < Math.min(player.pathToTarget.grids.size(), 3); i++)
+					int pathToTargetDistance = player.pathToTarget.grids.size();
+					for (int i = 0; i < Math.min(pathToTargetDistance, 3); i++)
 					{
 						player.move(player.pathToTarget.grids.remove(0));
 						if (golds.contains(new Gold(player.grid)))
@@ -129,8 +130,10 @@ public class GameDrawer
 						}
 						if (player.getGoldAmount() <= 0)
 						{
-							Logger.log(player.name, "Bakiyesi tükendi, oyundan elendi.");
+							Logger.logPlayer(player.name, "Bakiyesi tükendi, oyundan elendi.");
 							players.remove(player);
+							panel.revalidate();
+							panel.repaint();
 							break;
 						}
 						panel.revalidate();
@@ -142,16 +145,27 @@ public class GameDrawer
 					player.chooseTarget(golds);
 					Path path = pathFinder.findPath(player.grid, player.target.grid);
 					player.pathToTarget = path;
+					if (player.getGoldAmount() <= 0)
+					{
+						Logger.logPlayer(player.name, "Bakiyesi tükendi, oyundan elendi.");
+						players.remove(player);
+					}
 				}
 
 				panel.revalidate();
 				panel.repaint();
 
-				if (players.size() == 1)
+				if (players.size() <= 1)
+				{
+					Logger.log(String.format("%s oyuncusu kazandı. Bakiyesi: %d", players.get(0).name, players.get(0).getGoldAmount()));
 					((Timer) e.getSource()).stop();
+				}
 
 				if (golds.size() == 0)
+				{
+					Logger.log("Oyun alanındaki altınlar tükendi.");
 					((Timer) e.getSource()).stop();
+				}
 
 				playerIndex[0] = (playerIndex[0] + 1) % players.size();
 			}

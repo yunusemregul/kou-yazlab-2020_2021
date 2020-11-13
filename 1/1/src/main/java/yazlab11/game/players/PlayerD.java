@@ -2,7 +2,6 @@ package yazlab11.game.players;
 
 import yazlab11.Logger;
 import yazlab11.PathFinder;
-import yazlab11.Point;
 import yazlab11.game.Gold;
 import yazlab11.game.Grid;
 
@@ -33,7 +32,7 @@ public class PlayerD extends Player
 
 		target = closestGold;
 
-		Logger.log(name, String.format("Yeni hedef olarak %.0f, %.0f karesindeki altını belirledi.", target.grid.position.x, target.grid.position.y));
+		Logger.logPlayer(name, String.format("Yeni hedef olarak %.0f, %.0f karesindeki altını belirledi.", target.grid.position.x, target.grid.position.y));
 		addGold(-this.chooseCost);
 		return target;
 	}

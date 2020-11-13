@@ -35,7 +35,7 @@ public abstract class Player
 	public void addGold(int amount)
 	{
 		goldAmount += amount;
-		Logger.log(name, String.format("Bakiyesine %d altın eklendi. Yeni bakiyesi: %d", amount, goldAmount));
+		Logger.logPlayer(name, String.format("Bakiyesine %d altın eklendi. Yeni bakiyesi: %d", amount, goldAmount));
 	}
 
 	public int getGoldAmount()
@@ -56,7 +56,7 @@ public abstract class Player
 	public void move(Grid grid)
 	{
 		this.grid = grid;
-		Logger.log(name, String.format("%.0f, %.0f karesine hareket etti.", grid.position.x, grid.position.y));
+		Logger.logPlayer(name, String.format("%.0f, %.0f karesine hareket etti.", grid.position.x, grid.position.y));
 		addGold(-moveCost);
 	}
 
