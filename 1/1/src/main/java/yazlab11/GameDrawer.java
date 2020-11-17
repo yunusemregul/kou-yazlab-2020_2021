@@ -20,8 +20,8 @@ public class GameDrawer
 	private final int height = 768;
 
 	public static HashMap<String, Integer> settings;
-	private ArrayList<Player> players;
-	private ArrayList<Gold> golds;
+	public static ArrayList<Player> players;
+	public static ArrayList<Gold> golds;
 	private RandomGoldPositionGenerator goldPositionGenerator;
 
 	private JPanel panel;
@@ -87,62 +87,36 @@ public class GameDrawer
 		frame.setVisible(true);
 
 		final int[] playerIndex = {0};
-		Timer timer = new Timer(50, new ActionListener()
+		Timer timer = new Timer(5, new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
+				Timer timer = ((Timer) e.getSource());
 				Player player = players.get(playerIndex[0]);
 
-				if (player.target != null)
-				{
-					int pathToTargetDistance = player.pathToTarget.grids.size();
-					for (int i = 0; i < Math.min(pathToTargetDistance, 3); i++)
-					{
-						player.move(player.pathToTarget.grids.remove(0));
-						if (golds.contains(new Gold(player.grid)))
-						{
-							Gold gold = golds.get(golds.indexOf(new Gold(player.grid)));
-							if (gold.hidden)
-								gold.hidden = false;
-							else
-							{
-								player.addGold(gold.amount);
-								for (Player other: players)
-								{
-									if (player==other)
-										continue;
-
-									if (other.target==gold)
-									{
-										other.target = null;
-										other.pathToTarget = null;
-									}
-								}
-								if(gold==player.target)
-								{
-									player.target = null;
-									player.pathToTarget = null;
-									golds.remove(gold);
-									break;
-								}
-								golds.remove(gold);
-							}
-						}
-						if (player.getGoldAmount() <= 0)
-						{
-							Logger.logPlayer(player.name, "Bakiyesi tükendi, oyundan elendi.");
-							players.remove(player);
-							panel.revalidate();
-							panel.repaint();
-							break;
-						}
-						panel.revalidate();
-						panel.repaint();
-					}
-				}
-				else
+				if (player.target == null)
 				{
 					player.chooseTarget(golds);
+
+					if (player.target==null)
+					{
+						Logger.logPlayer(player.name, "Gidilebilecek hedef bulamadı.");
+						playerIndex[0] = (playerIndex[0] + 1) % players.size();
+						return;
+					}
+
+					if (player.grid.equals(player.target.grid))
+					{
+						Gold gold = checkGold(player);
+
+						if (gold == player.target)
+						{
+							player.target = null;
+							player.pathToTarget = null;
+							return;
+						}
+					}
+
 					Path path = pathFinder.findPath(player.grid, player.target.grid);
 					player.pathToTarget = path;
 					if (player.getGoldAmount() <= 0)
@@ -151,6 +125,52 @@ public class GameDrawer
 						players.remove(player);
 					}
 				}
+				else
+				{
+					if (player.grid==player.target.grid)
+					{
+						Gold gold = checkGold(player);
+
+						if (gold == player.target)
+						{
+							player.target = null;
+							player.pathToTarget = null;
+							return;
+						}
+					}
+				}
+
+				panel.revalidate();
+				panel.repaint();
+
+				player.addGold(-player.moveCost);
+				int pathToTargetDistance = player.pathToTarget.grids.size();
+				for (int i = 0; i < Math.min(pathToTargetDistance, 3); i++)
+				{
+					Grid gridToGo = player.pathToTarget.grids.remove(0);
+					player.pathHasGone.grids.add(gridToGo);
+					player.move(gridToGo);
+
+					Gold gold = checkGold(player);
+
+					if (gold == player.target)
+					{
+						player.target = null;
+						player.pathToTarget = null;
+						break;
+					}
+
+					if (player.getGoldAmount() <= 0)
+					{
+						Logger.logPlayer(player.name, "Bakiyesi tükendi, oyundan elendi.");
+						players.remove(player);
+						panel.revalidate();
+						panel.repaint();
+						break;
+					}
+					panel.revalidate();
+					panel.repaint();
+				}
 
 				panel.revalidate();
 				panel.repaint();
@@ -158,19 +178,47 @@ public class GameDrawer
 				if (players.size() <= 1)
 				{
 					Logger.log(String.format("%s oyuncusu kazandı. Bakiyesi: %d", players.get(0).name, players.get(0).getGoldAmount()));
-					((Timer) e.getSource()).stop();
+					timer.stop();
 				}
 
 				if (golds.size() == 0)
 				{
 					Logger.log("Oyun alanındaki altınlar tükendi.");
-					((Timer) e.getSource()).stop();
+					timer.stop();
 				}
 
 				playerIndex[0] = (playerIndex[0] + 1) % players.size();
 			}
 		});
 		timer.start();
+	}
+
+	public Gold checkGold(Player player)
+	{
+		if (golds.contains(new Gold(player.grid)))
+		{
+			Gold gold = golds.get(golds.indexOf(new Gold(player.grid)));
+			if (gold.hidden)
+				gold.hidden = false;
+			else
+			{
+				player.addGold(gold.amount);
+				for (Player other : players)
+				{
+					if (player == other)
+						continue;
+
+					if (other.target == gold)
+					{
+						other.target = null;
+						other.pathToTarget = null;
+					}
+				}
+				golds.remove(gold);
+				return gold;
+			}
+		}
+		return null;
 	}
 
 	public static Point getGridScreenPos(Point p)
@@ -192,18 +240,39 @@ public class GameDrawer
 		{
 			for (int y = 0; y < settings.get("ysize"); y++)
 			{
-				Point screenPos = getGridScreenPos(new Point(x, y));
+				Grid thisGrid = new Grid(x,y);
+				Point screenPos = getGridScreenPos(thisGrid);
 				g.setColor(new Color(22, 22, 22));
 				g.drawRect((int) screenPos.x, (int) screenPos.y, gridSize, gridSize);
 				for (Player player : players)
 				{
+					if (player.pathHasGone.grids.contains(thisGrid))
+					{
+						g.setColor(new Color(player.color.getRed(), player.color.getGreen(), player.color.getBlue(), 100));
+						g.fillRect((int) screenPos.x, (int) screenPos.y, gridSize, gridSize);
+
+						int index = player.pathHasGone.grids.indexOf(thisGrid);
+
+						if (player.pathHasGone.grids.size()>=(index+2))
+						{
+							Point thisGridPos = getGridScreenPos(thisGrid);
+							Point nextGridPos = getGridScreenPos(player.pathHasGone.grids.get(index+1));
+
+							thisGridPos.add(gridSize/2, gridSize/2);
+							nextGridPos.add(gridSize/2, gridSize/2);
+
+							g.setColor(player.color);
+							g.drawLine((int)thisGridPos.x, (int)thisGridPos.y, (int)nextGridPos.x, (int)nextGridPos.y);
+						}
+					}
+
 					if (player.target == null)
 						continue;
 
 					if (player.pathToTarget == null)
 						continue;
 
-					if (player.pathToTarget.grids.contains(new Grid(x, y)))
+					if (player.pathToTarget.grids.contains(thisGrid))
 					{
 						g.setColor(player.color);
 						g.fillRect((int) screenPos.x, (int) screenPos.y, gridSize, gridSize);

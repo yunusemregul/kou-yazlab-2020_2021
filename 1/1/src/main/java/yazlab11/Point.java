@@ -25,6 +25,18 @@ public class Point
 		this.y = y;
 	}
 
+	public void add(Point b)
+	{
+		this.x += b.x;
+		this.y += b.y;
+	}
+
+	public void add(float x, float y)
+	{
+		this.x += x;
+		this.y += y;
+	}
+
 	@Override
 	public String toString()
 	{

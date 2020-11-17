@@ -17,6 +17,7 @@ public abstract class Player
 	public final Color color;
 	public Grid grid;
 	public Gold target;
+	public Path pathHasGone;
 	public Path pathToTarget;
 	private int goldAmount;
 	public int chooseCost;
@@ -30,6 +31,8 @@ public abstract class Player
 		this.goldAmount = goldAmount;
 		this.chooseCost = chooseCost;
 		this.moveCost = moveCost;
+		this.pathHasGone = new Path();
+		this.pathHasGone.grids.add(grid);
 	}
 
 	public void addGold(int amount)
@@ -57,7 +60,6 @@ public abstract class Player
 	{
 		this.grid = grid;
 		Logger.logPlayer(name, String.format("%.0f, %.0f karesine hareket etti.", grid.position.x, grid.position.y));
-		addGold(-moveCost);
 	}
 
 	public abstract Gold chooseTarget(ArrayList<Gold> golds);

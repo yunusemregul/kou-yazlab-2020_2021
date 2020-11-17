@@ -1,5 +1,6 @@
 package yazlab11.game.players;
 
+import yazlab11.GameDrawer;
 import yazlab11.Logger;
 import yazlab11.PathFinder;
 import yazlab11.game.Gold;
@@ -17,20 +18,57 @@ public class PlayerD extends Player
 
 	public Gold chooseTarget(ArrayList<Gold> golds)
 	{
-		double minDistance = Double.MAX_VALUE;
-		Gold closestGold = null;
-		for (Gold gold : golds)
+		double closestOtherPlayersTargetDistance = Double.MAX_VALUE;
+		Gold closestOtherPlayersTarget = null;
+		for (Player player : GameDrawer.players)
 		{
-			double distance = PathFinder.calculateBirdViewDistance(this.grid, gold.grid);
+			if (player==this)
+				continue;
 
-			if (distance < minDistance)
+			if (player.target==null)
+				continue;
+
+			double playersDistance = PathFinder.calculateBirdViewDistance(player.grid, player.target.grid);
+			double ourDistance = PathFinder.calculateBirdViewDistance(this.grid, player.target.grid);
+			if (ourDistance<playersDistance)
 			{
-				minDistance = distance;
-				closestGold = gold;
+				if (ourDistance < closestOtherPlayersTargetDistance)
+				{
+					closestOtherPlayersTarget = player.target;
+					closestOtherPlayersTargetDistance = ourDistance;
+				}
 			}
 		}
 
-		target = closestGold;
+		if (closestOtherPlayersTarget!=null)
+		{
+			target = closestOtherPlayersTarget;
+			Logger.logPlayer(name, String.format("Yeni hedef olarak %.0f, %.0f karesindeki altını belirledi.", target.grid.position.x, target.grid.position.y));
+			addGold(-this.chooseCost);
+			return closestOtherPlayersTarget;
+		}
+
+		double minCost = Double.MAX_VALUE;
+		Gold mostProfitableGold = null;
+		for (Gold gold : golds)
+		{
+			if(gold.hidden)
+				continue;
+
+			double distance = PathFinder.calculateBirdViewDistance(this.grid, gold.grid);
+			double cost = distance/gold.amount;
+
+			if (cost < minCost)
+			{
+				minCost = cost;
+				mostProfitableGold = gold;
+			}
+		}
+
+		target = mostProfitableGold;
+
+		if (target == null)
+			return null;
 
 		Logger.logPlayer(name, String.format("Yeni hedef olarak %.0f, %.0f karesindeki altını belirledi.", target.grid.position.x, target.grid.position.y));
 		addGold(-this.chooseCost);

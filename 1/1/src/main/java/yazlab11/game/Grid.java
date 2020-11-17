@@ -59,7 +59,7 @@ public class Grid
 		if (o == null || getClass() != o.getClass())
 			return false;
 		Grid grid = (Grid) o;
-		return ((grid.position.x == position.x) && (grid.position.y==position.y));
+		return this.position.equals(grid.position);
 	}
 
 	@Override
