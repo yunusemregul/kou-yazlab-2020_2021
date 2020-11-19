@@ -16,8 +16,8 @@ import java.util.Random;
 public class GameDrawer
 {
 	public static int gridSize = 25;
-	private final int width = 1366;
-	private final int height = 768;
+	private final int width;
+	private final int height;
 
 	public static HashMap<String, Integer> settings;
 	public static ArrayList<Player> players;
@@ -31,13 +31,13 @@ public class GameDrawer
 	{
 		this.settings = settings;
 
-		players = new ArrayList<Player>();
+		players = new ArrayList<>();
 		players.add(new PlayerA(new Grid(new Point(0, 0)), settings.get("startinggold"), settings.get("playerA_choosecost"), settings.get("playerA_movecost")));
 		players.add(new PlayerB(new Grid(new Point(settings.get("xsize") - 1, 0)), settings.get("startinggold"), settings.get("playerB_choosecost"), settings.get("playerB_movecost")));
 		players.add(new PlayerC(new Grid(new Point(0, settings.get("ysize") - 1)), settings.get("startinggold"), settings.get("playerC_choosecost"), settings.get("playerC_movecost")));
 		players.add(new PlayerD(new Grid(new Point(settings.get("xsize") - 1, settings.get("ysize") - 1)), settings.get("startinggold"), settings.get("playerD_choosecost"), settings.get("playerD_movecost")));
 
-		golds = new ArrayList<Gold>();
+		golds = new ArrayList<>();
 
 		goldPositionGenerator = new RandomGoldPositionGenerator(settings.get("xsize"), settings.get("ysize"));
 		goldPositionGenerator.generate();
@@ -60,6 +60,9 @@ public class GameDrawer
 				golds.add(new Gold(new Grid(goldPositionGenerator.get()), false, goldAmount));
 			}
 		}
+
+		width = gridSize * settings.get("xsize") + 17;
+		height = gridSize * settings.get("ysize") + 40;
 
 		JFrame frame = new JFrame();
 		frame.setTitle("Yazlab 1 - 1");
@@ -87,7 +90,7 @@ public class GameDrawer
 		frame.setVisible(true);
 
 		final int[] playerIndex = {0};
-		Timer timer = new Timer(5, new ActionListener()
+		Timer timer = new Timer(1000, new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
@@ -98,7 +101,7 @@ public class GameDrawer
 				{
 					player.chooseTarget(golds);
 
-					if (player.target==null)
+					if (player.target == null)
 					{
 						Logger.logPlayer(player.name, "Gidilebilecek hedef bulamadı.");
 						playerIndex[0] = (playerIndex[0] + 1) % players.size();
@@ -127,7 +130,7 @@ public class GameDrawer
 				}
 				else
 				{
-					if (player.grid==player.target.grid)
+					if (player.grid == player.target.grid)
 					{
 						Gold gold = checkGold(player);
 
@@ -143,7 +146,7 @@ public class GameDrawer
 				panel.revalidate();
 				panel.repaint();
 
-				player.addGold(-player.moveCost);
+				player.addGold(-player.moveCost, "Hamle");
 				int pathToTargetDistance = player.pathToTarget.grids.size();
 				for (int i = 0; i < Math.min(pathToTargetDistance, 3); i++)
 				{
@@ -202,7 +205,7 @@ public class GameDrawer
 				gold.hidden = false;
 			else
 			{
-				player.addGold(gold.amount);
+				player.addGold(gold.amount, "Altın toplama");
 				for (Player other : players)
 				{
 					if (player == other)
@@ -240,7 +243,7 @@ public class GameDrawer
 		{
 			for (int y = 0; y < settings.get("ysize"); y++)
 			{
-				Grid thisGrid = new Grid(x,y);
+				Grid thisGrid = new Grid(x, y);
 				Point screenPos = getGridScreenPos(thisGrid);
 				g.setColor(new Color(22, 22, 22));
 				g.drawRect((int) screenPos.x, (int) screenPos.y, gridSize, gridSize);
@@ -251,18 +254,21 @@ public class GameDrawer
 						g.setColor(new Color(player.color.getRed(), player.color.getGreen(), player.color.getBlue(), 100));
 						g.fillRect((int) screenPos.x, (int) screenPos.y, gridSize, gridSize);
 
-						int index = player.pathHasGone.grids.indexOf(thisGrid);
-
-						if (player.pathHasGone.grids.size()>=(index+2))
+						for (int index = 0; index < player.pathHasGone.grids.size(); index++)
 						{
-							Point thisGridPos = getGridScreenPos(thisGrid);
-							Point nextGridPos = getGridScreenPos(player.pathHasGone.grids.get(index+1));
+							Grid grid = player.pathHasGone.grids.get(index);
 
-							thisGridPos.add(gridSize/2, gridSize/2);
-							nextGridPos.add(gridSize/2, gridSize/2);
+							if (grid.equals(thisGrid) && (player.pathHasGone.grids.size() >= (index + 2)))
+							{
+								Point thisGridPos = getGridScreenPos(thisGrid);
+								Point nextGridPos = getGridScreenPos(player.pathHasGone.grids.get(index + 1));
 
-							g.setColor(player.color);
-							g.drawLine((int)thisGridPos.x, (int)thisGridPos.y, (int)nextGridPos.x, (int)nextGridPos.y);
+								thisGridPos.add(gridSize / 2, gridSize / 2);
+								nextGridPos.add(gridSize / 2, gridSize / 2);
+
+								g.setColor(player.color);
+								g.drawLine((int) thisGridPos.x, (int) thisGridPos.y, (int) nextGridPos.x, (int) nextGridPos.y);
+							}
 						}
 					}
 
@@ -274,7 +280,7 @@ public class GameDrawer
 
 					if (player.pathToTarget.grids.contains(thisGrid))
 					{
-						g.setColor(player.color);
+						g.setColor(new Color(player.color.getRed(), player.color.getGreen(), player.color.getBlue(), 50));
 						g.fillRect((int) screenPos.x, (int) screenPos.y, gridSize, gridSize);
 					}
 				}

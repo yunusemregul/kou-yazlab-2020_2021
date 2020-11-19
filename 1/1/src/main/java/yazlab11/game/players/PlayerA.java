@@ -39,7 +39,7 @@ public class PlayerA extends Player
 			return null;
 
 		Logger.logPlayer(name, String.format("Yeni hedef olarak %.0f, %.0f karesindeki altını belirledi.", target.grid.position.x, target.grid.position.y));
-		addGold(-this.chooseCost);
+		addGold(-this.chooseCost, "Hedef belirleme");
 		return target;
 	}
 }

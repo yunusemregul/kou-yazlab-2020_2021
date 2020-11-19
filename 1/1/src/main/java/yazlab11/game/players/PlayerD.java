@@ -44,34 +44,17 @@ public class PlayerD extends Player
 		{
 			target = closestOtherPlayersTarget;
 			Logger.logPlayer(name, String.format("Yeni hedef olarak %.0f, %.0f karesindeki altını belirledi.", target.grid.position.x, target.grid.position.y));
-			addGold(-this.chooseCost);
+			addGold(-this.chooseCost, "Hedef belirleme");
 			return closestOtherPlayersTarget;
 		}
 
-		double minCost = Double.MAX_VALUE;
-		Gold mostProfitableGold = null;
-		for (Gold gold : golds)
-		{
-			if(gold.hidden)
-				continue;
-
-			double distance = PathFinder.calculateBirdViewDistance(this.grid, gold.grid);
-			double cost = distance/gold.amount;
-
-			if (cost < minCost)
-			{
-				minCost = cost;
-				mostProfitableGold = gold;
-			}
-		}
-
-		target = mostProfitableGold;
+		target = findMostProfitableGold(golds);
 
 		if (target == null)
 			return null;
 
 		Logger.logPlayer(name, String.format("Yeni hedef olarak %.0f, %.0f karesindeki altını belirledi.", target.grid.position.x, target.grid.position.y));
-		addGold(-this.chooseCost);
+		addGold(-this.chooseCost,"Hedef belirleme");
 		return target;
 	}
 }

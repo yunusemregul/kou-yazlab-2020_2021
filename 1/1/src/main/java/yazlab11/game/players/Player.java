@@ -1,8 +1,6 @@
 package yazlab11.game.players;
 
-import yazlab11.GameDrawer;
-import yazlab11.Logger;
-import yazlab11.Path;
+import yazlab11.*;
 import yazlab11.Point;
 import yazlab11.game.Gold;
 import yazlab11.game.Grid;
@@ -22,6 +20,7 @@ public abstract class Player
 	private int goldAmount;
 	public int chooseCost;
 	public int moveCost;
+	public static final PathFinder pathFinder = new PathFinder();
 
 	protected Player(String name, Color color, Grid grid, int goldAmount, int chooseCost, int moveCost)
 	{
@@ -35,10 +34,10 @@ public abstract class Player
 		this.pathHasGone.grids.add(grid);
 	}
 
-	public void addGold(int amount)
+	public void addGold(int amount, String reason)
 	{
 		goldAmount += amount;
-		Logger.logPlayer(name, String.format("Bakiyesine %d altın eklendi. Yeni bakiyesi: %d", amount, goldAmount));
+		Logger.logPlayer(name, String.format("(%s) Bakiyesine %d altın eklendi. Yeni bakiyesi: %d", reason, amount, goldAmount));
 	}
 
 	public int getGoldAmount()
@@ -60,6 +59,28 @@ public abstract class Player
 	{
 		this.grid = grid;
 		Logger.logPlayer(name, String.format("%.0f, %.0f karesine hareket etti.", grid.position.x, grid.position.y));
+	}
+
+	public Gold findMostProfitableGold(ArrayList<Gold> golds)
+	{
+		double minCost = Double.MAX_VALUE;
+		Gold mostProfitableGold = null;
+		for (Gold gold : golds)
+		{
+			if(gold.hidden)
+				continue;
+
+			Path path = pathFinder.findPath(gold.grid, this.grid);
+			double moveCost = (path.cost/3) * this.moveCost;
+
+			if (moveCost < minCost)
+			{
+				minCost = moveCost;
+				mostProfitableGold = gold;
+			}
+		}
+
+		return mostProfitableGold;
 	}
 
 	public abstract Gold chooseTarget(ArrayList<Gold> golds);
