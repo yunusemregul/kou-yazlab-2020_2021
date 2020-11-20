@@ -20,7 +20,7 @@ public class PlayerD extends Player
 	{
 		double closestOtherPlayersTargetDistance = Double.MAX_VALUE;
 		Gold closestOtherPlayersTarget = null;
-		for (Player player : GameDrawer.players)
+		for (Player player : GameDrawer.activePlayers)
 		{
 			if (player==this)
 				continue;

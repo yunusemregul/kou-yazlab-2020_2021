@@ -8,6 +8,7 @@ import yazlab11.game.Grid;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
+import java.util.Vector;
 
 public abstract class Player
 {
@@ -20,6 +21,9 @@ public abstract class Player
 	private int goldAmount;
 	public int chooseCost;
 	public int moveCost;
+	public int totalMoveCount;
+	public int wastedGoldAmount;
+	public int collectedGoldAmount;
 	public static final PathFinder pathFinder = new PathFinder();
 
 	protected Player(String name, Color color, Grid grid, int goldAmount, int chooseCost, int moveCost)
@@ -32,10 +36,22 @@ public abstract class Player
 		this.moveCost = moveCost;
 		this.pathHasGone = new Path();
 		this.pathHasGone.grids.add(grid);
+		this.totalMoveCount = 0;
+		this.wastedGoldAmount = 0;
+		this.collectedGoldAmount = 0;
+
 	}
 
 	public void addGold(int amount, String reason)
 	{
+		if (amount > 0)
+		{
+			collectedGoldAmount += amount;
+		}
+		else
+		{
+			wastedGoldAmount += -amount;
+		}
 		goldAmount += amount;
 		Logger.logPlayer(name, String.format("(%s) Bakiyesine %d altın eklendi. Yeni bakiyesi: %d", reason, amount, goldAmount));
 	}
@@ -57,6 +73,7 @@ public abstract class Player
 
 	public void move(Grid grid)
 	{
+		totalMoveCount++;
 		this.grid = grid;
 		Logger.logPlayer(name, String.format("%.0f, %.0f karesine hareket etti.", grid.position.x, grid.position.y));
 	}
@@ -67,11 +84,11 @@ public abstract class Player
 		Gold mostProfitableGold = null;
 		for (Gold gold : golds)
 		{
-			if(gold.hidden)
+			if (gold.hidden)
 				continue;
 
 			Path path = pathFinder.findPath(gold.grid, this.grid);
-			double moveCost = (path.cost/3) * this.moveCost;
+			double moveCost = (path.cost / 3) * this.moveCost;
 
 			if (moveCost < minCost)
 			{
@@ -81,6 +98,18 @@ public abstract class Player
 		}
 
 		return mostProfitableGold;
+	}
+
+	public Vector<String> generateStatsVector()
+	{
+		Vector<String > stats = new Vector<>();
+		stats.add(this.name);
+		stats.add(""+this.totalMoveCount);
+		stats.add(""+this.wastedGoldAmount);
+		stats.add(""+this.goldAmount);
+		stats.add(""+this.collectedGoldAmount);
+
+		return stats;
 	}
 
 	public abstract Gold chooseTarget(ArrayList<Gold> golds);

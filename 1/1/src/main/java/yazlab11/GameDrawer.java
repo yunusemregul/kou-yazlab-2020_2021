@@ -20,7 +20,8 @@ public class GameDrawer
 	private final int height;
 
 	public static HashMap<String, Integer> settings;
-	public static ArrayList<Player> players;
+	public static ArrayList<Player> activePlayers;
+	public static ArrayList<Player> deadPlayers;
 	public static ArrayList<Gold> golds;
 	private RandomGoldPositionGenerator goldPositionGenerator;
 
@@ -31,11 +32,12 @@ public class GameDrawer
 	{
 		this.settings = settings;
 
-		players = new ArrayList<>();
-		players.add(new PlayerA(new Grid(new Point(0, 0)), settings.get("startinggold"), settings.get("playerA_choosecost"), settings.get("playerA_movecost")));
-		players.add(new PlayerB(new Grid(new Point(settings.get("xsize") - 1, 0)), settings.get("startinggold"), settings.get("playerB_choosecost"), settings.get("playerB_movecost")));
-		players.add(new PlayerC(new Grid(new Point(0, settings.get("ysize") - 1)), settings.get("startinggold"), settings.get("playerC_choosecost"), settings.get("playerC_movecost")));
-		players.add(new PlayerD(new Grid(new Point(settings.get("xsize") - 1, settings.get("ysize") - 1)), settings.get("startinggold"), settings.get("playerD_choosecost"), settings.get("playerD_movecost")));
+		activePlayers = new ArrayList<>();
+		deadPlayers = new ArrayList<>();
+		activePlayers.add(new PlayerA(new Grid(new Point(0, 0)), settings.get("startinggold"), settings.get("playerA_choosecost"), settings.get("playerA_movecost")));
+		activePlayers.add(new PlayerB(new Grid(new Point(settings.get("xsize") - 1, 0)), settings.get("startinggold"), settings.get("playerB_choosecost"), settings.get("playerB_movecost")));
+		activePlayers.add(new PlayerC(new Grid(new Point(0, settings.get("ysize") - 1)), settings.get("startinggold"), settings.get("playerC_choosecost"), settings.get("playerC_movecost")));
+		activePlayers.add(new PlayerD(new Grid(new Point(settings.get("xsize") - 1, settings.get("ysize") - 1)), settings.get("startinggold"), settings.get("playerD_choosecost"), settings.get("playerD_movecost")));
 
 		golds = new ArrayList<>();
 
@@ -90,12 +92,21 @@ public class GameDrawer
 		frame.setVisible(true);
 
 		final int[] playerIndex = {0};
-		Timer timer = new Timer(1000, new ActionListener()
+		Timer timer = new Timer(5, new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
 				Timer timer = ((Timer) e.getSource());
-				Player player = players.get(playerIndex[0]);
+				Player player = activePlayers.get(playerIndex[0]);
+
+				if (player.getGoldAmount() <= 0)
+				{
+					Logger.logPlayer(player.name, "Bakiyesi tükendi, oyundan elendi.");
+					deadPlayers.add(player);
+					activePlayers.remove(player);
+					playerIndex[0] = (playerIndex[0] + 1) % activePlayers.size();
+					return;
+				}
 
 				if (player.target == null)
 				{
@@ -104,7 +115,7 @@ public class GameDrawer
 					if (player.target == null)
 					{
 						Logger.logPlayer(player.name, "Gidilebilecek hedef bulamadı.");
-						playerIndex[0] = (playerIndex[0] + 1) % players.size();
+						playerIndex[0] = (playerIndex[0] + 1) % activePlayers.size();
 						return;
 					}
 
@@ -116,6 +127,7 @@ public class GameDrawer
 						{
 							player.target = null;
 							player.pathToTarget = null;
+							playerIndex[0] = (playerIndex[0] + 1) % activePlayers.size();
 							return;
 						}
 					}
@@ -125,7 +137,10 @@ public class GameDrawer
 					if (player.getGoldAmount() <= 0)
 					{
 						Logger.logPlayer(player.name, "Bakiyesi tükendi, oyundan elendi.");
-						players.remove(player);
+						deadPlayers.add(player);
+						activePlayers.remove(player);
+						playerIndex[0] = (playerIndex[0] + 1) % activePlayers.size();
+						return;
 					}
 				}
 				else
@@ -138,6 +153,7 @@ public class GameDrawer
 						{
 							player.target = null;
 							player.pathToTarget = null;
+							playerIndex[0] = (playerIndex[0] + 1) % activePlayers.size();
 							return;
 						}
 					}
@@ -148,7 +164,7 @@ public class GameDrawer
 
 				player.addGold(-player.moveCost, "Hamle");
 				int pathToTargetDistance = player.pathToTarget.grids.size();
-				for (int i = 0; i < Math.min(pathToTargetDistance, 3); i++)
+				for (int i = 0; i < Math.min(pathToTargetDistance, settings.get("movecount")); i++)
 				{
 					Grid gridToGo = player.pathToTarget.grids.remove(0);
 					player.pathHasGone.grids.add(gridToGo);
@@ -166,7 +182,8 @@ public class GameDrawer
 					if (player.getGoldAmount() <= 0)
 					{
 						Logger.logPlayer(player.name, "Bakiyesi tükendi, oyundan elendi.");
-						players.remove(player);
+						deadPlayers.add(player);
+						activePlayers.remove(player);
 						panel.revalidate();
 						panel.repaint();
 						break;
@@ -178,19 +195,21 @@ public class GameDrawer
 				panel.revalidate();
 				panel.repaint();
 
-				if (players.size() <= 1)
+				if (activePlayers.size() <= 1)
 				{
-					Logger.log(String.format("%s oyuncusu kazandı. Bakiyesi: %d", players.get(0).name, players.get(0).getGoldAmount()));
+					Logger.log(String.format("%s oyuncusu kazandı. Bakiyesi: %d", activePlayers.get(0).name, activePlayers.get(0).getGoldAmount()));
+					endGameStats();
 					timer.stop();
 				}
 
 				if (golds.size() == 0)
 				{
 					Logger.log("Oyun alanındaki altınlar tükendi.");
+					endGameStats();
 					timer.stop();
 				}
 
-				playerIndex[0] = (playerIndex[0] + 1) % players.size();
+				playerIndex[0] = (playerIndex[0] + 1) % activePlayers.size();
 			}
 		});
 		timer.start();
@@ -206,7 +225,7 @@ public class GameDrawer
 			else
 			{
 				player.addGold(gold.amount, "Altın toplama");
-				for (Player other : players)
+				for (Player other : activePlayers)
 				{
 					if (player == other)
 						continue;
@@ -247,7 +266,7 @@ public class GameDrawer
 				Point screenPos = getGridScreenPos(thisGrid);
 				g.setColor(new Color(22, 22, 22));
 				g.drawRect((int) screenPos.x, (int) screenPos.y, gridSize, gridSize);
-				for (Player player : players)
+				for (Player player : activePlayers)
 				{
 					if (player.pathHasGone.grids.contains(thisGrid))
 					{
@@ -287,7 +306,7 @@ public class GameDrawer
 			}
 		}
 
-		for (Player player : players)
+		for (Player player : activePlayers)
 		{
 			player.draw(g);
 		}
@@ -312,5 +331,10 @@ public class GameDrawer
 			g.drawLine((int) plyScreenPos.x + gridSize / 2, (int) plyScreenPos.y + gridSize / 2, (int) goldScreenPos.x + gridSize / 2, (int) goldScreenPos.y + gridSize / 2);
 			g.setStroke(new BasicStroke(1));
 		}*/
+	}
+
+	private void endGameStats()
+	{
+		new GameStatsDrawer();
 	}
 }

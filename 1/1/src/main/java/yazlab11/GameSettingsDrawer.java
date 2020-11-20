@@ -22,6 +22,7 @@ public class GameSettingsDrawer
 		settings.put("goldpercent", 20);
 		settings.put("hiddengoldpercent", 10);
 		settings.put("startinggold", 200);
+		settings.put("movecount", 3);
 
 		settings.put("playerA_choosecost", 5);
 		settings.put("playerA_movecost", 5);
@@ -128,6 +129,19 @@ public class GameSettingsDrawer
 			}
 		});
 
+		final JLabel moveCount = new JLabel("1 hamledeki maksimum adım sayısı:");
+		moveCount.setBorder(new EmptyBorder(10, 0, 0, 0));
+
+		final JSpinner moveCountSpinner = new JSpinner();
+		moveCountSpinner.setValue(settings.get("movecount"));
+		moveCountSpinner.addChangeListener(new ChangeListener()
+		{
+			public void stateChanged(ChangeEvent e)
+			{
+				settings.put("movecount", (Integer) ySize.getValue());
+			}
+		});
+
 
 		JButton startButton = new JButton("Başla");
 		startButton.addActionListener(new ActionListener()
@@ -149,6 +163,8 @@ public class GameSettingsDrawer
 		sizeContainer.add(hiddenGoldPercent);
 		sizeContainer.add(startingGoldLabel);
 		sizeContainer.add(startingGold);
+		sizeContainer.add(moveCount);
+		sizeContainer.add(moveCountSpinner);
 
 		JPanel playerASettings = generatePlayerSettingsPanel("A");
 		JPanel playerBSettings = generatePlayerSettingsPanel("B");
@@ -172,7 +188,7 @@ public class GameSettingsDrawer
 		JPanel playerSettingsPanel = new JPanel();
 		JLabel playerChooseCostLabel = new JLabel(String.format("Hedef seçme maliyeti:", name));
 		final JSpinner playerChooseCostSpinner = new JSpinner();
-		JLabel playerMoveCostLabel = new JLabel(String.format("1 birim hareket maliyeti:", name));
+		JLabel playerMoveCostLabel = new JLabel(String.format("Hamle maliyeti:", name));
 		final JSpinner playerMoveCostSpinner = new JSpinner();
 
 		playerSettingsPanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), String.format("%s oyuncusu için ayarlar", name)));
