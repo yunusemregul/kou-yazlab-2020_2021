@@ -88,7 +88,7 @@ public abstract class Player
 				continue;
 
 			Path path = pathFinder.findPath(gold.grid, this.grid);
-			double moveCost = (path.cost / 3) * this.moveCost;
+			double moveCost = (path.cost / GameDrawer.settings.get("movecount")) * this.moveCost + this.chooseCost - gold.amount;
 
 			if (moveCost < minCost)
 			{

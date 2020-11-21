@@ -92,7 +92,7 @@ public class GameDrawer
 		frame.setVisible(true);
 
 		final int[] playerIndex = {0};
-		Timer timer = new Timer(5, new ActionListener()
+		Timer timer = new Timer(1000, new ActionListener()
 		{
 			public void actionPerformed(ActionEvent e)
 			{
