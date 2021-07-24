@@ -1,0 +1,353 @@
+[B oyuncusu] Yeni hedef olarak 19, 2 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 190
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 185
+[B oyuncusu] 19, 1 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 5 altın eklendi. Yeni bakiyesi: 190
+[B oyuncusu] 19, 2 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 15 altın eklendi. Yeni bakiyesi: 205
+[B oyuncusu] Yeni hedef olarak 14, 2 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 195
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 190
+[B oyuncusu] 18, 2 karesine hareket etti.
+[B oyuncusu] 17, 2 karesine hareket etti.
+[B oyuncusu] 16, 2 karesine hareket etti.
+[B oyuncusu] Yeni hedef olarak 18, 0 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 190
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 185
+[B oyuncusu] 18, 0 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 205
+[B oyuncusu] Yeni hedef olarak 18, 2 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 195
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 190
+[B oyuncusu] 18, 1 karesine hareket etti.
+[B oyuncusu] 18, 2 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 210
+[B oyuncusu] Yeni hedef olarak 16, 1 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 200
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 195
+[B oyuncusu] 17, 2 karesine hareket etti.
+[B oyuncusu] 16, 2 karesine hareket etti.
+[B oyuncusu] 16, 1 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 215
+[B oyuncusu] Yeni hedef olarak 18, 7 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 205
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 200
+[B oyuncusu] 16, 2 karesine hareket etti.
+[B oyuncusu] 16, 3 karesine hareket etti.
+[B oyuncusu] 16, 4 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 195
+[B oyuncusu] 16, 5 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 5 altın eklendi. Yeni bakiyesi: 200
+[B oyuncusu] 17, 5 karesine hareket etti.
+[B oyuncusu] 17, 6 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 195
+[B oyuncusu] 17, 7 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 15 altın eklendi. Yeni bakiyesi: 210
+[B oyuncusu] 18, 7 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 230
+[B oyuncusu] Yeni hedef olarak 18, 9 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 220
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 215
+[B oyuncusu] 18, 8 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 15 altın eklendi. Yeni bakiyesi: 230
+[B oyuncusu] 18, 9 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 250
+[B oyuncusu] Yeni hedef olarak 15, 10 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 240
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 235
+[B oyuncusu] 17, 9 karesine hareket etti.
+[B oyuncusu] 16, 9 karesine hareket etti.
+[B oyuncusu] 16, 10 karesine hareket etti.
+[B oyuncusu] Yeni hedef olarak 11, 11 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 225
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 220
+[B oyuncusu] 15, 10 karesine hareket etti.
+[B oyuncusu] 14, 10 karesine hareket etti.
+[B oyuncusu] 13, 10 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 215
+[B oyuncusu] 12, 10 karesine hareket etti.
+[B oyuncusu] 12, 11 karesine hareket etti.
+[B oyuncusu] 11, 11 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 15 altın eklendi. Yeni bakiyesi: 230
+[B oyuncusu] Yeni hedef olarak 16, 0 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 190
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 185
+[B oyuncusu] 18, 0 karesine hareket etti.
+[B oyuncusu] 17, 0 karesine hareket etti.
+[B oyuncusu] 16, 0 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 205
+[B oyuncusu] Yeni hedef olarak 14, 0 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 195
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 190
+[B oyuncusu] 15, 0 karesine hareket etti.
+[B oyuncusu] 14, 0 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 210
+[B oyuncusu] Yeni hedef olarak 9, 0 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 200
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 195
+[B oyuncusu] 13, 0 karesine hareket etti.
+[B oyuncusu] 12, 0 karesine hareket etti.
+[B oyuncusu] 11, 0 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 190
+[B oyuncusu] 10, 0 karesine hareket etti.
+[B oyuncusu] 9, 0 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 210
+[B oyuncusu] Yeni hedef olarak 9, 4 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 200
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 195
+[B oyuncusu] 9, 1 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 10 altın eklendi. Yeni bakiyesi: 205
+[B oyuncusu] 9, 2 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 15 altın eklendi. Yeni bakiyesi: 220
+[B oyuncusu] 9, 3 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 215
+[B oyuncusu] 9, 4 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 235
+[B oyuncusu] Yeni hedef olarak 10, 6 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 225
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 220
+[B oyuncusu] 9, 5 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 10 altın eklendi. Yeni bakiyesi: 230
+[B oyuncusu] 10, 5 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 10 altın eklendi. Yeni bakiyesi: 240
+[B oyuncusu] 10, 6 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 260
+[B oyuncusu] Yeni hedef olarak 11, 3 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 250
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 245
+[B oyuncusu] 10, 5 karesine hareket etti.
+[B oyuncusu] 10, 4 karesine hareket etti.
+[B oyuncusu] 11, 4 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 240
+[B oyuncusu] 11, 3 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 260
+[B oyuncusu] Yeni hedef olarak 12, 3 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 250
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 245
+[B oyuncusu] 12, 3 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 265
+[B oyuncusu] Yeni hedef olarak 10, 3 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 255
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 250
+[B oyuncusu] 11, 3 karesine hareket etti.
+[B oyuncusu] 10, 3 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 15 altın eklendi. Yeni bakiyesi: 265
+[B oyuncusu] Yeni hedef olarak 7, 1 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 255
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 250
+[B oyuncusu] 9, 3 karesine hareket etti.
+[B oyuncusu] 8, 3 karesine hareket etti.
+[B oyuncusu] 8, 2 karesine hareket etti.
+[B oyuncusu] Yeni hedef olarak 18, 4 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 190
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 185
+[B oyuncusu] 19, 1 karesine hareket etti.
+[B oyuncusu] 19, 2 karesine hareket etti.
+[B oyuncusu] 19, 3 karesine hareket etti.
+[B oyuncusu] Yeni hedef olarak 17, 3 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 190
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 185
+[B oyuncusu] 19, 1 karesine hareket etti.
+[B oyuncusu] 19, 2 karesine hareket etti.
+[B oyuncusu] 18, 2 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 180
+[B oyuncusu] 18, 3 karesine hareket etti.
+[B oyuncusu] 17, 3 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 15 altın eklendi. Yeni bakiyesi: 195
+[B oyuncusu] Yeni hedef olarak 12, 1 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 185
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 180
+[B oyuncusu] 16, 3 karesine hareket etti.
+[B oyuncusu] 15, 3 karesine hareket etti.
+[B oyuncusu] 14, 3 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 5 altın eklendi. Yeni bakiyesi: 185
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 180
+[B oyuncusu] 13, 3 karesine hareket etti.
+[B oyuncusu] 13, 2 karesine hareket etti.
+[B oyuncusu] 12, 2 karesine hareket etti.
+[B oyuncusu] Yeni hedef olarak 18, 1 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 190
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 185
+[B oyuncusu] 18, 0 karesine hareket etti.
+[B oyuncusu] 18, 1 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 205
+[B oyuncusu] Yeni hedef olarak 19, 2 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 195
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 190
+[B oyuncusu] 19, 1 karesine hareket etti.
+[B oyuncusu] 19, 2 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 210
+[B oyuncusu] Yeni hedef olarak 16, 3 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 200
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 195
+[B oyuncusu] 18, 2 karesine hareket etti.
+[B oyuncusu] 17, 2 karesine hareket etti.
+[B oyuncusu] 17, 3 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 190
+[B oyuncusu] 16, 3 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 210
+[B oyuncusu] Yeni hedef olarak 15, 1 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 200
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 195
+[B oyuncusu] 16, 2 karesine hareket etti.
+[B oyuncusu] 15, 2 karesine hareket etti.
+[B oyuncusu] 15, 1 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 215
+[B oyuncusu] Yeni hedef olarak 14, 1 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 205
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 200
+[B oyuncusu] 14, 1 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 15 altın eklendi. Yeni bakiyesi: 215
+[B oyuncusu] Yeni hedef olarak 14, 0 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 205
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 200
+[B oyuncusu] 14, 0 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 15 altın eklendi. Yeni bakiyesi: 215
+[B oyuncusu] Yeni hedef olarak 11, 2 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 205
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 200
+[B oyuncusu] 13, 0 karesine hareket etti.
+[B oyuncusu] 13, 1 karesine hareket etti.
+[B oyuncusu] 12, 1 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 195
+[B oyuncusu] 12, 2 karesine hareket etti.
+[B oyuncusu] 11, 2 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 215
+[B oyuncusu] Yeni hedef olarak 13, 4 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 205
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 200
+[B oyuncusu] 12, 2 karesine hareket etti.
+[B oyuncusu] 12, 3 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 15 altın eklendi. Yeni bakiyesi: 215
+[B oyuncusu] 12, 4 karesine hareket etti.
+[B oyuncusu] Yeni hedef olarak 10, 7 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 205
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 200
+[B oyuncusu] 12, 5 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 10 altın eklendi. Yeni bakiyesi: 210
+[B oyuncusu] 11, 5 karesine hareket etti.
+[B oyuncusu] 11, 6 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 205
+[B oyuncusu] 10, 6 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 5 altın eklendi. Yeni bakiyesi: 210
+[B oyuncusu] 10, 7 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 230
+[B oyuncusu] Yeni hedef olarak 4, 8 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 220
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 215
+[B oyuncusu] 9, 7 karesine hareket etti.
+[B oyuncusu] 8, 7 karesine hareket etti.
+[B oyuncusu] 7, 7 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 210
+[B oyuncusu] 6, 7 karesine hareket etti.
+[B oyuncusu] 5, 7 karesine hareket etti.
+[B oyuncusu] 4, 7 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 205
+[B oyuncusu] 4, 8 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 20 altın eklendi. Yeni bakiyesi: 225
+[B oyuncusu] Yeni hedef olarak 4, 11 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 215
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 210
+[B oyuncusu] 4, 9 karesine hareket etti.
+[B oyuncusu] 4, 10 karesine hareket etti.
+[B oyuncusu] 4, 11 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 15 altın eklendi. Yeni bakiyesi: 225
+[B oyuncusu] Yeni hedef olarak 5, 11 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 215
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 210
+[B oyuncusu] 5, 11 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 10 altın eklendi. Yeni bakiyesi: 220
+[B oyuncusu] Yeni hedef olarak 1, 13 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 210
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 205
+[B oyuncusu] 4, 11 karesine hareket etti.
+[B oyuncusu] 3, 11 karesine hareket etti.
+[B oyuncusu] 3, 12 karesine hareket etti.
+[B oyuncusu] Yeni hedef olarak 3, 17 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 195
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 190
+[B oyuncusu] 3, 13 karesine hareket etti.
+[B oyuncusu] 3, 14 karesine hareket etti.
+[B oyuncusu] 3, 15 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 185
+[B oyuncusu] 3, 16 karesine hareket etti.
+[B oyuncusu] 3, 17 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 10 altın eklendi. Yeni bakiyesi: 195
+[B oyuncusu] Yeni hedef olarak 4, 18 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 185
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 180
+[B oyuncusu] 4, 17 karesine hareket etti.
+[B oyuncusu] 4, 18 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 10 altın eklendi. Yeni bakiyesi: 190
+[B oyuncusu] Yeni hedef olarak 2, 19 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 180
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 175
+[B oyuncusu] 3, 18 karesine hareket etti.
+[B oyuncusu] 2, 18 karesine hareket etti.
+[B oyuncusu] 2, 19 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 10 altın eklendi. Yeni bakiyesi: 185
+[B oyuncusu] Yeni hedef olarak 7, 19 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 175
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 170
+[B oyuncusu] 3, 19 karesine hareket etti.
+[B oyuncusu] 4, 19 karesine hareket etti.
+[B oyuncusu] 5, 19 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 165
+[B oyuncusu] 6, 19 karesine hareket etti.
+[B oyuncusu] 7, 19 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 5 altın eklendi. Yeni bakiyesi: 170
+[B oyuncusu] Yeni hedef olarak 10, 15 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 160
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 155
+[B oyuncusu] 7, 18 karesine hareket etti.
+[B oyuncusu] 8, 18 karesine hareket etti.
+[B oyuncusu] 8, 17 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 150
+[B oyuncusu] 9, 17 karesine hareket etti.
+[B oyuncusu] 9, 16 karesine hareket etti.
+[B oyuncusu] 10, 16 karesine hareket etti.
+[B oyuncusu] Yeni hedef olarak 7, 10 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 140
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 135
+[B oyuncusu] 10, 15 karesine hareket etti.
+[B oyuncusu] 10, 14 karesine hareket etti.
+[B oyuncusu] 10, 13 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 130
+[B oyuncusu] 9, 13 karesine hareket etti.
+[B oyuncusu] 9, 12 karesine hareket etti.
+[B oyuncusu] 8, 12 karesine hareket etti.
+[B oyuncusu] Yeni hedef olarak 9, 5 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 120
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 115
+[B oyuncusu] 8, 11 karesine hareket etti.
+[B oyuncusu] 8, 10 karesine hareket etti.
+[B oyuncusu] 8, 9 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 110
+[B oyuncusu] 8, 8 karesine hareket etti.
+[B oyuncusu] 8, 7 karesine hareket etti.
+[B oyuncusu] 8, 6 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 105
+[B oyuncusu] 9, 6 karesine hareket etti.
+[B oyuncusu] 9, 5 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 5 altın eklendi. Yeni bakiyesi: 110
+[B oyuncusu] Yeni hedef olarak 10, 1 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 100
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 95
+[B oyuncusu] 9, 4 karesine hareket etti.
+[B oyuncusu] 9, 3 karesine hareket etti.
+[B oyuncusu] 9, 2 karesine hareket etti.
+[B oyuncusu] Yeni hedef olarak 16, 0 karesindeki altını belirledi.
+[B oyuncusu] (Hedef belirleme) Bakiyesine -10 altın eklendi. Yeni bakiyesi: 85
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 80
+[B oyuncusu] 10, 2 karesine hareket etti.
+[B oyuncusu] 11, 2 karesine hareket etti.
+[B oyuncusu] 12, 2 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 75
+[B oyuncusu] 13, 2 karesine hareket etti.
+[B oyuncusu] 14, 2 karesine hareket etti.
+[B oyuncusu] 14, 1 karesine hareket etti.
+[B oyuncusu] (Hamle) Bakiyesine -5 altın eklendi. Yeni bakiyesi: 70
+[B oyuncusu] 15, 1 karesine hareket etti.
+[B oyuncusu] 15, 0 karesine hareket etti.
+[B oyuncusu] 16, 0 karesine hareket etti.
+[B oyuncusu] (Altın toplama) Bakiyesine 10 altın eklendi. Yeni bakiyesi: 80
