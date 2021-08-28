@@ -40,7 +40,7 @@ Projede Java programlama dilini kullandık. Çözümümüze dair detaylı açık
 
 Çözümümüzden görüntüler:
 
-![1](https://raw.githubusercontent.com/yunusemregul/kou-yazlab-1-2/main/README_pics/1.gif)
+![1](https://raw.githubusercontent.com/yunusemregul/kou-yazlab-1-2/master/README_pics/1.gif)
 
 </details>
 
